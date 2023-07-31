@@ -1,29 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components/macro';
-import { ReactComponent as DocumentationIcon } from './assets/documentation-icon.svg';
-import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
 
 export function Nav() {
   return (
     <Wrapper>
-      <Item
-        href="https://cansahin.gitbook.io/react-boilerplate-cra-template/"
-        target="_blank"
-        title="Documentation Page"
-        rel="noopener noreferrer"
-      >
-        <DocumentationIcon />
-        Documentation
-      </Item>
-      <Item
-        href="https://github.com/react-boilerplate/react-boilerplate-cra-template"
-        target="_blank"
-        title="Github Page"
-        rel="noopener noreferrer"
-      >
-        <GithubIcon />
-        Github
-      </Item>
+      <Description>
+        Llámanos GRATIS al 1777
+      </Description>
     </Wrapper>
   );
 }
@@ -54,4 +37,10 @@ const Item = styled.a`
   .icon {
     margin-right: 0.25rem;
   }
+`;
+
+const Description = styled.div`
+  font-size: 0.875rem;
+  color: ${p => p.theme.textSecondary};
+  font-weight: normal;
 `;

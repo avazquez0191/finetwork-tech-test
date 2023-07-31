@@ -17,23 +17,24 @@ export function NavBar() {
 }
 
 const Wrapper = styled.header`
-  box-shadow: 0 1px 0 0 gray;
+  box-shadow: 0 1px 0 0 ${(props)=>props.theme.colors.white};
   height: ${StyleConstants.NAV_BAR_HEIGHT};
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: gray;
+  background-color: ${(props)=>props.theme.colors.white};
   z-index: 2;
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(10px);
-    background-color: gray;
+    background-color: ${(props)=>props.theme.colors.white};
   }
 
   ${PageWrapper} {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: ${(props)=>props.theme.colors.white};
   }
 `;

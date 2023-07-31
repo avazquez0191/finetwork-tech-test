@@ -17,20 +17,20 @@ import { CheckoutPage } from './pages/CheckoutPage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 
 export function App() {
-    return (
-      <BrowserRouter>
-        <Helmet>
-            <meta charSet="utf-8" />
-            <title>React Checkout</title>
-        </Helmet>
-        
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="checkout" element={<CheckoutPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        
-        <GlobalStyle />
-      </BrowserRouter>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>React Checkout</title>
+      </Helmet>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
+      <GlobalStyle />
+    </BrowserRouter>
+  );
+}

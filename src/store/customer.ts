@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface ICustomer {
+export interface ICustomer {
     document: string;
     firstName: string;
     firstLastName: string;
     secondLastName: string;
-    birthDate: Date;
+    birthDate: string;
     phone: string,
     email: string
 }
 
-interface ICustomerState {
+export interface ICustomerState {
     customer: ICustomer | null,
     loading: boolean,
     error: {} | null

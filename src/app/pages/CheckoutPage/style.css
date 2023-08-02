@@ -54,3 +54,16 @@ button.btn:disabled {
     line-height: 1;
     font-weight: 600;
 }
+
+ul.no-style {
+    list-style: none;
+    padding: 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}

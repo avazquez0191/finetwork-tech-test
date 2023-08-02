@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 import { styled } from 'styled-components';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
-
 import { NavBar } from 'app/components/NavBar';
 import { PageWrapper } from 'app/components/PageWrapper';
 import { CustomerForm } from './components/CustomerForm';
@@ -54,30 +53,35 @@ export function CheckoutPage() {
             <Title>¡Comenzamos con tu pedido!</Title>
             {
               {
-                1: <><Separator /><PromoSelection /></>,
-                2: <><Separator /><CustomerForm /></>,
-                3: <><Separator /><Resume /></>,
-                4: <>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <Checkbox.Root className="CheckboxRoot" checked={tcChecked} onCheckedChange={setTCChecke} id="c1" required>
-                        <Checkbox.Indicator className="CheckboxIndicator">
-                          <CheckIcon />
-                        </Checkbox.Indicator>
-                      </Checkbox.Root>
-                      <label className="Label" htmlFor="c1">
-                        He leído y acepto los costes y las nuevas condiciones asociadas al cambio de tarifa.
-                      </label>
-                    </div>
-                    <Button
-                      className='btn'
-                      type="button"
-                      onClick={() => signContractHandler()}
-                      disabled={!tcChecked}>
-                      Aceptar y confirmar tarifa
-                    </Button>
-                  </div>
-                </>,
+                1: <>
+                    <Separator /><PromoSelection />
+                  </>,
+                2: <>
+                    <Separator /><CustomerForm />
+                  </>,
+                3: <>
+                    <Separator /><Resume />
+                    <Separator />
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                          <Checkbox.Root className="CheckboxRoot" checked={tcChecked} onCheckedChange={setTCChecke} id="c1" required>
+                            <Checkbox.Indicator className="CheckboxIndicator">
+                              <CheckIcon />
+                            </Checkbox.Indicator>
+                          </Checkbox.Root>
+                          <label className="Label" htmlFor="c1">
+                            He leído y acepto los costes y las nuevas condiciones asociadas al cambio de tarifa.
+                          </label>
+                        </div>
+                        <Button
+                          className='btn'
+                          type="button"
+                          onClick={() => signContractHandler()}
+                          disabled={!tcChecked}>
+                          Aceptar y confirmar tarifa
+                        </Button>
+                      </div>
+                  </>
               }[checkoutStep]
             }
           </>

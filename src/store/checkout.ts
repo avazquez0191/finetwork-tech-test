@@ -64,7 +64,6 @@ const initialState: ICheckoutState = {
 export const fetchProduct = createAsyncThunk('checkout/fetchProduct', async () => {
   // Simulate an API call to fetch product data
   const response = localStorage.getItem('product') ?? '';
-  console.log(response);
   return JSON.parse(response);
 });
 
@@ -72,7 +71,6 @@ export const fetchProduct = createAsyncThunk('checkout/fetchProduct', async () =
 export const updateProduct = createAsyncThunk('checkout/updateProduct', async (productData: IProduct) => {
   // Simulate an API call to update product data
   localStorage.setItem('product', JSON.stringify(productData));
-  console.log(productData);
 });
 
 const checkoutSlice = createSlice({

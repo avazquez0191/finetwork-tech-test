@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { checkoutActions, fetchProduct, ICheckoutState, IProduct } from 'store/checkout';
+import { checkoutActions, updateProduct, ICheckoutState, IProduct } from 'store/checkout';
 import { RootState, AppDispatch } from 'store';
 import { styled } from 'styled-components';
 
@@ -11,14 +11,27 @@ export function Resume() {
   const promoId = checkout.promoId;
   const taxName = checkout.taxName;
 
-  const productPromo = () => {
+  const productPromoName = () => {
     const promo = product?.promotions?.find(promo => promo.id == promoId);
     return promo?.name;
   };
 
-  const productPrice = () => {
-    const price = product?.prices?.find(price => price.name == taxName);
-    return price?.price?.toFixed(2);
+  const productPromoType = () => {
+    const promo = product?.promotions?.find(promo => promo.id == promoId);
+    return promo?.type;
+  };
+
+  const priceRules = {
+    productPrice: () => {
+      const price = product?.prices?.find(price => price.name == taxName);
+      return price?.price?.toFixed(2);
+    },
+    productPriceFinal: () => {
+      const price = product?.prices?.find(price => price.name == taxName);
+      const originalPrice = price?.price;
+      const installationCost = 96.80;
+      return (productPromoType() == 'STANDARD')? originalPrice : (Number(originalPrice) + Number(installationCost)).toFixed(2);
+    }
   };
 
   const nextStepHandler = () => {
@@ -33,10 +46,11 @@ export function Resume() {
       <Row>
         <Block>
           <p>{product.webInfo.analyticsName}</p>
-          <small>{productPromo()}</small>
+          <p>{productPromoName()}</p>
         </Block>
         <Block>
-          <MidSuper>{productPrice()}€</MidSuper>
+          <MidSuper>{priceRules.productPrice()}€</MidSuper>
+          <p className='text-green'>{productPromoType() == 'STANDARD'? '3 meses' : '0 meses'}</p>
         </Block>
       </Row>
 
@@ -54,9 +68,9 @@ export function Resume() {
           <ul className='no-style text-right'>
             <li>0,00€</li>
             <li>96,80€</li>
-            <li>-96,80€</li>
+            <li>{productPromoType() == 'STANDARD'? -96.80 : 0}€</li>
           </ul>
-          <MidSuper>{productPrice()}€</MidSuper>
+          <MidSuper>{priceRules.productPriceFinal()}€</MidSuper>
         </Block>
       </Row>
 
@@ -66,7 +80,7 @@ export function Resume() {
         <Block>
         </Block>
         <Block>
-          <Super>{productPrice()}€</Super>
+          <Super>{priceRules.productPriceFinal()}€</Super>
         </Block>
       </Row>
     </>

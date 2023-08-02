@@ -67,3 +67,7 @@ ul.no-style {
 .text-left {
     text-align: left;
 }
+
+.text-green {
+    color: #2FD284;
+}

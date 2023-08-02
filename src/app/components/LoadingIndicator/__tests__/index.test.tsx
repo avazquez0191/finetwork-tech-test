@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import { LoadingIndicator } from '../index';
-import { themes } from 'styles/theme/themes';
+import themes from 'styles/Theme';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 
 const renderWithTheme = (

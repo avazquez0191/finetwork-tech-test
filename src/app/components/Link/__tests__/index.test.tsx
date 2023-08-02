@@ -2,14 +2,14 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 
 import { Link } from '../index';
-import { themes } from 'styles/theme/themes';
+import theme from 'styles/Theme';
 import { DefaultTheme } from 'styled-components';
 import { MemoryRouter } from 'react-router-dom';
 
 const renderWithTheme = (theme?: DefaultTheme) => {
   return render(
     <MemoryRouter>
-      <Link to="/test" theme={theme || themes.light}>
+      <Link to="/test" theme={theme}>
         HeaderLink
       </Link>
     </MemoryRouter>,
@@ -25,7 +25,7 @@ describe('<Link />', () => {
   it('should have theme', () => {
     const link = renderWithTheme();
     expect(link.container.firstChild).toHaveStyle(
-      `color: ${themes.light.primary}`,
+      `color: ${theme.light.primary}`,
     );
   });
 

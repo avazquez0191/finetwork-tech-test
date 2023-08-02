@@ -88,6 +88,9 @@ const checkoutSlice = createSlice({
     },
     setTCChecked(state) {
       state.tcChecked = !state.tcChecked;
+    },
+    clearData(state) {
+      state = initialState;
     }
   },
   extraReducers: (builder) => {

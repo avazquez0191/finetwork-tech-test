@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
     line-height: 1.5;
-    background-color: ${(props)=>props.theme.colors.background};
+    background-color: ${(props)=>props.theme.colors.secondary200};
   }
 
   body {

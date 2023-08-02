@@ -17,24 +17,19 @@ export function NavBar() {
 }
 
 const Wrapper = styled.header`
-  box-shadow: 0 1px 0 0 ${(props)=>props.theme.colors.white};
+  box-shadow: 0 1px 0 0 ${(props)=>props.theme.colors.secondary100};
   height: ${StyleConstants.NAV_BAR_HEIGHT};
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${(props)=>props.theme.colors.white};
+  background-color: ${(props)=>props.theme.colors.secondary100};
   z-index: 2;
-
-  @supports (backdrop-filter: blur(10px)) {
-    backdrop-filter: blur(10px);
-    background-color: ${(props)=>props.theme.colors.white};
-  }
 
   ${PageWrapper} {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: ${(props)=>props.theme.colors.white};
+    background-color: ${(props)=>props.theme.colors.secondary100};
   }
 `;

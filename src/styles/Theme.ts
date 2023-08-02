@@ -1,16 +1,56 @@
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
+const theme: DefaultTheme = {
   colors: {
-    primary: 'rgb(239, 242, 252)',
-    secondary: '#FFC80A',
-    tertiary: '#303030',
-    primaryText: '#000000',
-    secondaryText: '#594F43',
-    error: '',
-    success: '#66A15A'
+    disabled: '#ddd',
+    grayPrimary: '#D9DEF1',
+    graySecondary: '#BFC7E5',
+    linkText: '#5F3DFF',
+    primaryText: '#000',
+    primaryButtonText: '#fff',
+    secondaryText: '#5F0AFF',
+    secondaryButtonText: '#000',
+    secondary: '#9E88FC',
+    secondary100: '#F7F6F9',
+    secondary200: '#E6E1FA',
+    secondary300: '#D5CCFA',
+    secondary400: '#C3B6FB',
+    secondary500: '#B2A1FC',
+    secondary600: '#A18CFC',
+    secondary700: '#9077FD',
+    secondary800: '#7E61FE',
+    secondary900: '#6D4CFE',
+    secondary1000: '#C3A4FE',
+    primary: '#5F0AFF',
+    primary100: '#eff2fc',
+    primary200: '#e2dbff',
+    primary300: '#AA98FF',
+    primary400: '#7F64FF',
+    primary500: '#5F3DFF',
+    primary600: '#5035DD',
+    primary700: '#412CBA',
+    primary800: '#2C218C',
+    primary900: '#18165E',
+    tertiary: '#fff',
+    tertiaryText: '#fff',
+    tertiaryButtonText: '#000',
+    chartGreen: '#2FD284',
+    chartLightGreen: '#abedcd',
+    chartRed: '#FF2323',
+    chartLightRed: '#ff9999',
+    // tertiary100: '#FFF8F0',
+    // tertiary200: '#FEEBD2',
+    // tertiary300: '#FDD096',
+    // tertiary400: '#FBB559',
+    // tertiary500: '#FA9A1D',
+    // tertiary600: '#D37F17',
+    // tertiary700: '#AB6412',
+    // tertiary800: '#8D4F0E',
+    // tertiary900: '#7A420B',
   },
   fonts: {
-    primary: '#000000',
-  }
-}
+    primary: 'Nunito Sans, apple-system, sans-serif',
+    secondary: 'Druk, monospace',
+  },
+};
+export default theme;

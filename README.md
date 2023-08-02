@@ -22,6 +22,8 @@ Además, agregue la siguiente información a su archivo `README`:
 
 - ¿Cómo decidió las opciones técnicas y arquitectónicas utilizadas como parte de su solución?
 - ¿Hay alguna mejora que pueda hacer en su envío?
+*Agregar un carrito de compra o lista de compra para soportar multiples productos
+*Implementar un "Wizard" para el proceso de compra.
 - ¿Qué haría de manera diferente si se le asignara más tiempo?
 
 ## Detalles

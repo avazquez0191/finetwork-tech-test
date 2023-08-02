@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   margin-top: -8vh;
   font-weight: bold;
-  color: ${(props)=>props.theme.colors.text};
+  color: ${(props)=>props.theme.colors.secondaryText};
   font-size: 3.375rem;
 
   span {

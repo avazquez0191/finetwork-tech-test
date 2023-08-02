@@ -116,7 +116,6 @@ const Row = styled.div`
 `;
 
 const Block = styled.div`
-  
 `;
 
 const Separator = styled.hr`
